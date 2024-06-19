@@ -49,16 +49,18 @@ input[type='file'] {
 }
 
 .acoes {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     width: 80%;
 }
 
 .acao-box {
     padding: 15px;
-    gap: 15px;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .acoes select,
@@ -69,7 +71,7 @@ input[type='file'] {
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    width: 50%;
+    width: 100%;
     cursor: pointer;
     font-weight: bold;
 }
@@ -78,31 +80,29 @@ input[type='file'] {
     width: 100%;
 }
 
-.acoes button {
+#acoes button {
     background-color: #ed9222;
     color: white;
     transition: 0.3s;
 }
 
-#arquivo-label {
-    font-size: 20px;
+#ouvir-btn {
+    background-color: #ff6347;
+    color: white;
+    font-size: 18px;
     padding: 15px;
-    background-color: #ed9222;
 }
 
-.acoes button:hover,
+#acoes button:hover,
 #arquivo-label:hover {
     background-color: #d48a35;
 }
 
-
+/* Media query for screen widths less than 700px */
 @media (max-width: 1370px) {
     #entrada-de-conteudo {
         flex-direction: column;
         align-items: stretch;
-    }
-    .acoes{
-        flex-direction: column;
     }
 
     #entrada-de-conteudo textarea {
